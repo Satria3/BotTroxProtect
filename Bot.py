@@ -2,75 +2,67 @@
 
 import LINETCR
 from LINETCR.lib.curve.ttypes import *
+from io import StringIO
 from datetime import datetime
-import time,random,sys,json,codecs,threading,glob,re,os,subprocess
+import time,random,sys,json,codecs,threading,glob,sys
+import re,string,os
+import os.path,sys,urllib,shutil,subprocess
 
 cl = LINETCR.LINE() 
-#cl.login(qr=True)
-cl.login(token="E5qt4hxAsQtv5a4lG4Pb2.o8LSrfCelHJhhggYpY3ECG.89tTjn7ar5yjjSmJ264c867m9A4BWxxm3qA6WDPfuQ0=")#1
+cl.login(qr=True)
 cl.loginResult()
 
 ki = LINETCR.LINE() 
-#ki.login(qr=True)
-ki.login(token="EqsBVdQi8OKTh3j6Mkx5.hSHvpJH1bE2GB8InsSg0vq.2ssZtwAkffmtOy9zrJCx0F8Gz1oV17cMQqtHU3B6fYY=")#2
+ki.login(qr=True)
 ki.loginResult()
 
 kk = LINETCR.LINE() 
-#kk.login(qr=True)
-kk.login(token="EqCQV4Xbt7fHlhYgUBud.nI0+pkrzsIaJT928xZbUBq.AzE6+ebi0x+XnVazhYcPu9R9Fi+PKs9CKCKa4nAEA3Q=")#3
+kk.login(qr=True)
 kk.loginResult()
 
 kc = LINETCR.LINE() 
-#kc.login(qr=True)
-kc.login(token="Eqixl8C941Gv5hRQQ1Oa.VSkC4kWnVqaJsixjMKNE/G.LZcRDlgubJxkwt6wssjfeXlOWiPDOhW6mUGoHlZK9mE=")#4
+kc.login(qr=True)
 kc.loginResult()
 
 ks = LINETCR.LINE() 
-#ks.login(qr=True)
-ks.login(token="Eq8a1kGdhzncFNclSwE8.aWOMtct5v8ZYoiURB63+6a.uXYoZThrYy/BE6ZtIYDK/P8fmAI7+yWy2PPsJ25a4Os=")#5
+ks.login(qr=True)
 ks.loginResult()
 
 k1 = LINETCR.LINE() 
-#k1.login(qr=True)
-k1.login(token="EqinhCtJYhf2qsldL9Q8.jyCu5B2qelpygXkvspNkYa.clyuM1pLjwH/fW2K5peDhb5lO85xQ/Sy41aQMC4eUfc=")#6
+k1.login(qr=True)
 k1.loginResult()
 
 k2 = LINETCR.LINE() 
-#k2.login(qr=True)
-k2.login(token="EqDmLkbl9sozzKSc0Ceb.PpTPPNkiz0/ZXpxswLg6EW.nFxDdd/hTkAH+KyR1JfYmbgoFnLGxwNt31pQ+Ju7TN4=")#7
+k2.login(qr=True)
 k2.loginResult()
 
 k3 = LINETCR.LINE() 
-#k3.login(qr=True)
-k3.login(token="EqTakwU1uEsY3ySmze1a.90Ymb9xHHHXgqdGq7WeeYG.ZCCfUj6Arr12rWMUXfleBPkJ3+8jNdT+/ZWYY5tPv8k=")#8
+k3.login(qr=True)
 k3.loginResult()
 
 k4 = LINETCR.LINE() 
-#k4.login(qr=True)
-k4.login(token="Eq1OrNXVRXW8Y7KQcu46.mfwViEizEjvKk9PbUJ6yjG.KajgT+AHqLQGyvwe+H3kRcx+XOSuxSzT/zrNIzZDmbA=")#9
+k4.login(qr=True)
 k4.loginResult()
 
 k5 = LINETCR.LINE() 
-#k5.login(qr=True)
-k5.login(token="EqHeBRhevhJBZ8bdwWy0.uNIkKz2Tzq0urveBoSIbia.W/1/YdnOUV9NQ0zgSg0yCp8MAx+c6WgHSqTbvS40kZA=")#10
+k5.login(qr=True)
 k5.loginResult()
 
-satpam1 = LINETCR.LINE()  
-satpam1.login(token="Eqek1vC7KLnK4jsWnYb0.fGIUiExEjuE1/OChSHYIia.I+U46H+FbaNeyUFj6q8tYpNBQ7cKfoHlCQ972Cv50fg=")#satpam 
-#satpam1.login(qr=True)
+satpam1 = LINETCR.LINE()
+satpam1.login(qr=True)
 satpam1.loginResult()
 
-print "login success bos"
+print "🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\nSELAMAT MENGGUNAKAN"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
 helpMessage ="""
 ╔═════════════
-║    ✰ BOTTROX BOT✰ 
+║🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 ╠═════════════
-║      Owner : SATRIA
+║  OWNER : SATRIA
 ╠═════════════
-║   ◄]·♦·Menu For Public·♦·[►
+║◄]·♦·Menu For Public·♦·[►
 ║╔════════════
 ║╠[•]Help
 ║╠[•]Key
@@ -112,12 +104,12 @@ helpMessage ="""
 ║╠[•]T-thai
 ║╠[•]T-id
 ║╚════════════
-║     ✰ BOTTROX BOT ✰
+║🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 ╚═════════════
 """
 Keyowner ="""
 ╔═════════════
-║   ✰ BOTTROX BOT ✰ 
+║🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 ╠═════════════
 ║   Owner : SATRIA  
 ╠═════════════
@@ -171,16 +163,16 @@ Keyowner ="""
 ║╠[•]Speedbot
 ║╠[•]Speed
 ║╚════════════
-║    ✰ BOTTROX BOT ✰
+║🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 ╚═════════════
 """
 Setgroup ="""
 ╔═════════════
-║    ✰ BOTTROX BOT ✰ 
+║🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 ╠═════════════
-║  Owner : SATRIA 
+║ OWNER : SATRIA 
 ╠═════════════
-║   ◄]·♦·Menu For Admin·♦·[►
+║◄]·♦·Menu For Admin·♦·[►
 ║╔════════════
 ║╠[•]Cancel
 ║╠[•]Buka qr/Open qr
@@ -252,7 +244,7 @@ Setgroup ="""
 ║╠[•]Pm cast
 ║╠[•]Bot like
 ║╠════════════
-║╠[•]One piece
+║╠[•]BotTrox
 ║╠[•]Kabur all
 ║╠[•]Kabur
 ║╠[•]Bot kadieu
@@ -268,7 +260,7 @@ Setgroup ="""
 ║╚════════════
 ║👑Hanya Utk Owner/Admin👑
 ╠═════════════
-║   ✰ BOTTROX BOT ✰
+║🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 ╚═════════════
 """
 KAC=[cl,ki,kk,kc,ks,k1,k2,k3,k4,k5]
@@ -307,18 +299,18 @@ wait = {
     'autoAdd':True,
     'message':"""тerima Kasih Sudah Menambahkan Aku Jadi Teman
 ≫ Aku Ga Jawab PM Karna aq Cuma Bot Protect ≪
->>✰ BOTTROX BOT ✰<<
+>>🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨<<
 
 ≫ bot protect ≪
 ≫ SelfBot ≪
 
 ṡȗƿƿȏяṭєԀ ɞʏ:
   
-☆ BOTTROX BOT ☆
+🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 
 Idline:  http://line.me/ti/p/up3NLjmK17""",
     "lang":"JP",
-    "comment":"👉ąµţ๏ℓɨЌ€ By😊\n☆º°˚˚☆✰ BOTTROX BOT ✰☆º°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by Satria ⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««",
+    "comment":"👉ąµţ๏ℓɨЌ€ By😊\n☆º°˚˚🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨º°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by Satria ⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««",
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
@@ -838,44 +830,32 @@ def bot(op):
 
         #------Protect Group Kick start------#
         if op.type == 11:
-          if wait["Protectgr"] == True:
-            if cl.getGroup(op.param1).preventJoinByTicket == False:
-              if op.param2 in Bots:
-                pass
-              if op.param2 in admin:
-                pass
-              else:
-                try:
-                  cl.sendText(op.param1,cl.getContact(op.param2).displayName + "Jangan Buka Kode QR Woyyyyy...!!!")
-                  cl.kickoutFromGroup(op.param1,[op.param2])
-                  X = cl.getGroup(op.param1)
-                  X.preventJoinByTicket = True
-                  cl.updateGroup(X)
-                except:
-                  random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "Jangan Buka Kode QR Woyyyyy...!!!")
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                  Z = random.choice(KAC).getGroup(op.param1)
-                  Z.preventJoinByTicket = True
-                  random.choice(KAC).updateGroup(Z)
+           if wait["Protectgr"] == True:
+               if op.param2 not in Bots and admin:
+                   G = random.choice(KAC).getGroup(op.param1)
+                   G.preventJoinByTicket = True
+                   #random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                   random.choice(KAC).updateGroup(G)
+                   random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "Jangan Buka Kode QR Njiiir")
         #------Protect Group Kick finish-----#
+
         #------Cancel Invite User start------#
         if op.type == 13:
           if wait["Protectcancl"] == True:
             group = cl.getGroup(op.param1)
             gMembMids = [contact.mid for contact in group.invitee]
-            if op.param2 in Bots:
-              pass
-            if op.param2 in admin:
-              pass
-            else:
-              try:
-                random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
-                random.choice(KAC).sendText(op.param1, "Mau Ngundang Siapa Ka?\nKk Bukan Admin\nJadi Aku Cancel😛")
-                random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-              except:
-                random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
-                random.choice(KAC).sendText(op.param1, "Mau Ngundang Siapa Ka?\nKk Bukan Admin\nJadi Aku Cancel😛")
-                random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+            if op.param2 not in Bots + admin:
+              if op.param2 in Bots + admin:
+                pass
+              else:
+                try:
+                  cl.cancelGroupInvitation(op.param1, gMembMids)
+                  cl.sendText(op.param1, "Mau Invite Siapa Kaka ??? \nJangan Sok Jadi Jagoan Deh Lu Njir.\nAdmin Bukan,Owner Juga Bukan\njadi aku Cancel😛")
+                  #random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                except:
+                  random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
+                  random.choice(KAC).sendText(op.param1, "Mau Invite Siapa Kaka ??? \nJangan Sok Jadi Jagoan Deh Lu Njir.\nAdmin Bukan,Owner Juga Bukan\nJadi aku Cancel😛")
+                  #random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
         #------Cancel Invite User Finish------#
 #--------------------END_OF_OPERATION--------------------
         if op.type == 0:
@@ -1303,8 +1283,8 @@ def bot(op):
 #-------------------------------------------------------- 
         if op.type == 17:
           if wait["Protectjoin"] == True:
-            if op.param2 not in Bots:
-              if op.param2 in Bots:
+            if op.param2 not in Bots + admin:
+              if op.param2 in Bots + admin:
                 pass
               elif op.param2 in admin:
                 pass
@@ -1320,8 +1300,8 @@ def bot(op):
         #------Joined User Kick start------#
         if op.type == 32: #Yang Cancel Invitan langsung ke kick
           if wait["Protectcancel"] == True:
-            if op.param2 not in Bots:
-              if op.param2 in Bots:
+            if op.param2 not in Bots + admin:
+              if op.param2 in Bots + admin:
                 pass
               elif op.param2 in admin:
                 pass
@@ -1334,9 +1314,9 @@ def bot(op):
         if op.type == 19:
 		if wait["AutoKick"] == True:
 		    try:
-			if op.param3 in Bots:
+			if op.param3 in Bots + admin:
 			    pass
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
 		            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
@@ -1373,7 +1353,7 @@ def bot(op):
 		
 #-----------------------------------------------------------------
                 if mid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         ki.kickoutFromGroup(op.param1,[op.param2])
@@ -1386,7 +1366,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1401,13 +1381,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Amid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         kk.kickoutFromGroup(op.param1,[op.param2])
@@ -1420,7 +1400,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1436,13 +1416,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Bmid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         kc.kickoutFromGroup(op.param1,[op.param2])
@@ -1455,7 +1435,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1471,13 +1451,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Cmid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         ks.kickoutFromGroup(op.param1,[op.param2])
@@ -1490,7 +1470,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1505,13 +1485,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Dmid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         k1.kickoutFromGroup(op.param1,[op.param2])
@@ -1524,7 +1504,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1539,13 +1519,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Emid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         k2.kickoutFromGroup(op.param1,[op.param2])
@@ -1558,7 +1538,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1573,13 +1553,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Fmid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         k3.kickoutFromGroup(op.param1,[op.param2])
@@ -1592,7 +1572,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1607,13 +1587,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Gmid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         k4.kickoutFromGroup(op.param1,[op.param2])
@@ -1626,7 +1606,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1641,13 +1621,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Hmid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         k5.kickoutFromGroup(op.param1,[op.param2])
@@ -1660,7 +1640,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1675,13 +1655,13 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
 
                 if Imid in op.param3:
-                    if op.param2 in Bots:
+                    if op.param2 in Bots + admin:
                         pass
                     try:
                         cl.kickoutFromGroup(op.param1,[op.param2])
@@ -1694,7 +1674,7 @@ def bot(op):
                         if op.param2 in wait["blacklist"]:
                             pass
                         else:
-			    if op.param2 in Bots:
+			    if op.param2 in Bots + admin:
 			        pass
 			    else:
                                 wait["blacklist"][op.param2] = True
@@ -1709,7 +1689,7 @@ def bot(op):
                     if op.param2 in wait["blacklist"]:
                         pass
                     else:
-		        if op.param2 in Bots:
+		        if op.param2 in Bots + admin:
 			    pass
 		        else:
                             wait["blacklist"][op.param2] = True
@@ -2136,7 +2116,7 @@ def bot(op):
                   cl.sendText(msg.to,"The stafflist is empty")
               else:
                   cl.sendText(msg.to,"Tunggu...")
-                  mc = "||Admin ✰ BOTTROX BOT✰||\n===============\n"
+                  mc = ".     ADMIN\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n===============\n"
                   for mi_d in admin:
                       mc += "••>" +cl.getContact(mi_d).displayName + "\n"
                   cl.sendText(msg.to,mc)
@@ -2299,47 +2279,29 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
-
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Amid}
                 ki.sendMessage(msg)
-
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Bmid}
                 kk.sendMessage(msg)
-
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Cmid}
                 kc.sendMessage(msg)
-                
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Dmid}
                 ks.sendMessage(msg)
-                
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Emid}
                 k1.sendMessage(msg)
-                
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Fmid}
                 k2.sendMessage(msg)
-                
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Gmid}
                 k3.sendMessage(msg)
-                
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Hmid}
                 k4.sendMessage(msg)
-                
-                msg.contentType = 13
                 msg.contentMetadata = {'mid': Imid}
                 k5.sendMessage(msg)
 #====================================================
             elif msg.text.lower() == "crash":
               if msg.from_ in owner:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': "c33b66e4b7709e54a6fe6eced6e57c157',"}
+                msg.contentMetadata = {'mid': "u1608ae21e5de2547b5fa8707b21ca220"}
                 cl.sendMessage(msg)
 #====================================================
             elif msg.text in ["Me"]:
@@ -3246,7 +3208,7 @@ def bot(op):
                 mmid = cl.getContact(key1)
                 msg.contentType = 13
                 msg.contentMetadata = {"mid": key1}
-                cl.sendMessage(msg)#=================
+                cl.sendMessage(msg)
             elif msg.text in ["Mc "]:
               if msg.from_ in admin:
                 mmid = msg.text.replace("Mc ","")
@@ -3484,7 +3446,7 @@ def bot(op):
                         cl.sendText(msg.to,"è¦�äº†å…³æ–­ã€‚")
             elif msg.text in ["Status","status"]:
               if msg.from_ in admin:
-                md = "⭐Status Proteksi⭐\n*============*\n"
+                md = "⭐Status Proteksi⭐\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\nHANYA UNTUK ADMIN\n*============*\n"
                 if wait["Protectgr"] == True: md+="[•]Protect QR [On]\n"
                 else: md+="[•]Protect QR [Off]\n"
                 if wait["Protectcancl"] == True: md+="[•]Protect Invite [On]\n"
@@ -3511,7 +3473,7 @@ def bot(op):
                 else: md+="[•]Protect Cancel [Off]\n"
                 if wait["protectionOn"] == True: md+="[•]Protection : hight\n"+ datetime.today().strftime('%H:%M:%S')
                 else:md+="[•]Protection : low\n"+ datetime.today().strftime('%H:%M:%S')
-                "\n*============*\n⭐✰ BOTTROX BOT✰⭐\n*============*"
+                "\n*============*\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n*============*"
                 cl.sendText(msg.to,md)
             elif "Time" in msg.text:
               if msg.from_ in admin:
@@ -3934,7 +3896,7 @@ def bot(op):
                     print "[Command]Speed palsu executed"				
             elif "Sp turunin" in msg.text:
                 if msg.from_ in admin:
-                    cl.sendText(msg.to, "Sek lurr")
+                    cl.sendText(msg.to, "Siap lurr")
                     start = time.time()
                     time.sleep(0.02)
                     elapsed_time = time.time() - start
@@ -3942,7 +3904,7 @@ def bot(op):
                     print "[Command]Speed palsu executed"
             elif "Sp naikin" in msg.text:
                 if msg.from_ in admin:
-                    cl.sendText(msg.to, "Sek lurr")
+                    cl.sendText(msg.to, "Siap lurr")
                     start = time.time()
                     time.sleep(0.1)
                     elapsed_time = time.time() - start
@@ -3950,7 +3912,7 @@ def bot(op):
                     print "[Command]Speed palsu executed"
             elif "Turun lagi" in msg.text:
                 if msg.from_ in admin:
-                    cl.sendText(msg.to, "Sek lurr")
+                    cl.sendText(msg.to, "Siap lurr")
                     start = time.time()
                     time.sleep(0.5)
                     elapsed_time = time.time() - start
@@ -3959,7 +3921,7 @@ def bot(op):
             elif "Spbot" in msg.text:
                 if msg.from_ in admin:
                     time.sleep(0.5)
-                    cl.sendText(msg.to, "Sek lurr")
+                    cl.sendText(msg.to, "Siap lurr")
                     start = time.time()
                     time.sleep(2.32)
                     elapsed_time = time.time() - start
@@ -3968,7 +3930,7 @@ def bot(op):
             elif msg.text in ["Sp asli"]:
                 if msg.from_ in admin:
                     start = time.time()                   
-                    cl.sendText(msg.to, "Sek")                    
+                    cl.sendText(msg.to, "Siap")                    
                     elapsed_time = time.time() - start
                     cl.sendText(msg.to, "%sseconds" % (elapsed_time))
                     print "[Command]Speed asli executed"
@@ -4103,7 +4065,7 @@ def bot(op):
                     print r
                     print i
 #----------------------------------------------
-            elif "Bot1 clone " in msg.text:
+            elif "Bot1 clone" in msg.text:
               if msg.from_ in admin:
                 targets = []
                 key = eval(msg.contentMetadata["MENTION"])
@@ -4445,7 +4407,7 @@ def bot(op):
                                 #print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "||Di Read Oleh||%s\n||By : ✰Ќriֆ✰ ✰ BOTTROX BOT ✰||\n\n>Pelaku CCTV<\n%s-=CCTV=-\n\n•ASEM LU Cctv\n[%s]" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "|Di Read Oleh||%s\n\nBy : 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n\n>Pelaku CCTV<\n%s-=CCTV=-\n\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n[%s]" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
                         cl.sendText(msg.to, "Ketik Cctv dulu Trox\nBaru Ketik Read\nDASAR PIKUN ♪")
                         
@@ -4474,7 +4436,7 @@ def bot(op):
                             for rom in wait2["ROM"][msg.to].items():
                                 print "[Command] Check"
                                 chiya += rom[1] + "\n"
-                        cl.sendText(msg.to, "✔ ✰ BOTTROX BOT✰\nRead : %s\n\n✖ Sider :\n%s\nPoint creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "|Di Read Oleh||%s\n\nBy : 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n\n>Pelaku CCTV<\n%s-=CCTV=-\n\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n[%s]" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                         try:
                             del wait2['readPoint'][msg.to]
                             del wait2['readMember'][msg.to]
@@ -4568,7 +4530,7 @@ def bot(op):
                   ki.updateGroup(G)
                   Ticket = ki.reissueGroupTicket(msg.to)
 
-            elif msg.text in ["Luffy join"]:
+            elif msg.text in ["BotTrox2 join"]:
               if msg.from_ in admin:
                   x = cl.getGroup(msg.to)
                   x.preventJoinByTicket = False
@@ -4581,7 +4543,7 @@ def bot(op):
                   cl.updateGroup(G)
                   Ticket = cl.reissueGroupTicket(msg.to)
 
-            elif msg.text in ["Zorro join"]:
+            elif msg.text in ["BotTrox3 join"]:
               if msg.from_ in admin:
                   x = cl.getGroup(msg.to)
                   x.preventJoinByTicket = False
@@ -4594,7 +4556,7 @@ def bot(op):
                   cl.updateGroup(G)
                   Ticket = cl.reissueGroupTicket(msg.to)
                   
-            elif msg.text in ["Sanji Join"]:
+            elif msg.text in ["BotTrix4 Join"]:
               if msg.from_ in admin:
                   X = cl.getGroup(msg.to)
                   X.preventJoinByTicket = False
@@ -4649,7 +4611,7 @@ def bot(op):
                     except:
                         pass
                       
-            elif msg.text in ["Bye zorro"]:
+            elif msg.text in ["Bye BotTrox2"]:
               if msg.from_ in owner:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -4657,7 +4619,7 @@ def bot(op):
                         ki.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Bye sanji"]:
+            elif msg.text in ["Bye BotTrox3"]:
               if msg.from_ in owner:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -4665,7 +4627,7 @@ def bot(op):
                         kk.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Bye Ussop"]:
+            elif msg.text in ["Bye BotTrox4"]:
               if msg.from_ in owner:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -4673,21 +4635,21 @@ def bot(op):
                         kc.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Ojo koyo kuwe1"]:
+            elif msg.text in ["Bot2 bye"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         ki.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Ojo koyo kuwe2"]:
+            elif msg.text in ["Bot3 bye"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
                         kk.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Ojo koyo kuwe3"]:
+            elif msg.text in ["Bot4 bye"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -4697,7 +4659,7 @@ def bot(op):
     #-------------Fungsi Leave Group Finish---------------#
     
     #-------------Fungsi Tag All Start---------------#
-            elif msg.text in ["Emak"]:
+            elif msg.text in ["Dot","Tag"]:
             	 if msg.from_ in admin:
                   group = cl.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
@@ -4725,7 +4687,7 @@ def bot(op):
                   except Exception as error:
                       print error
                       
-            elif msg.text in ["Abah"]:
+            elif msg.text in ["tag"]:
             	 if msg.from_ in admin:              
                   group = cl.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
@@ -4785,7 +4747,7 @@ def bot(op):
                  cnt.to = msg.to
                  cl.sendMessage(cnt)                      
                       
-            elif msg.text in ["Crot"]:
+            elif msg.text in ["tagall"]:
             	 if msg.from_ in admin:              
                   group = cl.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
@@ -5473,11 +5435,11 @@ def bot(op):
        #-------------Fungsi Respon Start---------------------#
             elif msg.text in ["Absen","Respon"]:
               if msg.from_ in admin:
+                cl.sendText(msg.to,"★BotTrox 1 on")
                 ki.sendText(msg.to,"★BotTrox 2 on")
                 kk.sendText(msg.to,"★BotTrox 3 on")
                 kc.sendText(msg.to,"★BotTrox 4 on")
                 ks.sendText(msg.to,"★BotTrox 5 on")
-                cl.sendText(msg.to,"★BotTrox 1 on")
                 k1.sendText(msg.to,"★BotTrox 6 on")
                 k2.sendText(msg.to,"★BotTrox 7 on")
                 k3.sendText(msg.to,"★BotTrox 8 on")
