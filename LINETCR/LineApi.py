@@ -460,14 +460,18 @@ class LINE:
       callback = def_callback
 
       prof = self.getProfile()
-
+      
+      print("=========[ BOTTROX PROTECT]=========")
+      print("     Thanks for TCR and my friend")
+      print("=====================================")
       print("BOTTROX PROTECT BOT")
       print("mid -> " + prof.mid)
       print("Nama -> " + prof.displayName)
       print("Token -> " + self.authToken)
       print("cert -> " + self.cert if self.cert is not None else "")
-
-
+      print("============[ S A T R I A ]==============")
+      print("   BOTTROX BOTS PROTECT.   ")
+      print("=====================================")
 
 class AniSearch(object):
   ## REQUIRED : urllib , requests
