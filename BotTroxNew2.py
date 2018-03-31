@@ -2610,7 +2610,7 @@ def bot(op):
                   except Exception as error:
                       print error
                       
-           elif "tag" == msg.text.lower():
+            elif "tag" == msg.text.lower():
             	if msg.from_ in admin:
                  group = cl.getGroup(msg.to)
                  nama = [contact.mid for contact in group.members]
