@@ -1,19 +1,64 @@
-- `????????B?TT?X B?T????????`
+🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 
-ID LINE :  `http://line.me/ti/p/up3NLjmK17`
+BOTTROX 1 AKUN
+------
+GET TOKEN :
+------
+- `git clone https://github.com/alfathdirk/LineAlphatJS.git
+cd LineAlphatJS && npm install
+npm start`
 
--`pkg install python2`
--`pkg install git`
--`pkg install nano`
--`pkg install nodejs`
-   -`pip2 install rsa`
-   -`pip2 install thrift==0.9.3`
-   -`pip2 install requests`
-   -`pip2 install goslate`
-   -`pip2 install client`
-   -`pip2 install wikipedia`
-   -`pip2 install googletrans`
-  - `pip2 install bs4`
-   -`pip2 install gtts`
--`git clone https://github.com/Satria3/BotTroxProtect`
+Cara Install : 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
+------
 
+Di C9 :
+- Ketik -> `sudo apt-get update`
+- Ketik -> `sudo apt-get install git`
+- Ketik -> `sudo apt-get install python-sofware-properties`
+- Ketik -> `sudo pip install rsa`
+- Ketik -> `sudo pip install thrift==0.9.3`
+- Ketik -> `sudo pip install requests`
+- Ketik -> `sudo pip install requests==2.5.3`
+- Ketik -> `sudo pip install bs4`
+- Ketik -> `sudo pip install gtts`
+- Ketik -> `sudo pip install googletrans`
+- Ketik -> `git clone https://github.com/Satria3/BotTroxProtect`
+- Ketik -> `cd BotTroxProtect`
+- Ketik -> `python BotTroxNew2.py`
+
+Di Termux :
+
+- Ketik -> `pkg update`
+- Ketik -> `pkg install git`
+- Ketik -> `pkg install python2`
+- Ketik -> `pip2 install rsa`
+- Ketik -> `pip2 install thrift==0.9.3`
+- Ketik -> `pip2 install requests`
+- Ketik -> `pip2 install bs4`
+- Ketik -> `pip2 install gtts`
+- Ketik -> `pip2 install googletrans`
+- Ketik -> `git clone https://github.com/Satria3/BotTroxProtect`
+- Ketik -> `cd BotTroxProtect`
+- Ketik -> `python BotTroxNew2.py`
+
+Cara Menjalankan Bot Kembali :
+------
+Di C9 :
+- Ketik -> `cd BotTroxProtect`
+- Ketik -> `python BotTroxNew2.py`
+
+Di Termux :
+- Ketik -> `cd BotTroxProtect`
+- Ketik -> `python BotTroxNew2.py`
+
+
+Credit By @Satria.
+------
+- `ADD ID LINE : rha_iia`
+- `http://line.me/ti/p/up3NLjmK17`
+
+Thx To :
+------
+- `LINE-TCR TEAM`
+- `ONE PIECE TEAM`
+- `DAN KAWAN-KAWAN`
