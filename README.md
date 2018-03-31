@@ -1,6 +1,6 @@
 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨
 
-BOTTROX 1 AKUN
+BOTTROX 1 admin 10 Bot 1 Bot Backup
 ------
 GET TOKEN :
 ------
