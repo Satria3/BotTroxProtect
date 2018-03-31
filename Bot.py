@@ -62,7 +62,7 @@ helpMessage ="""
 ╠═════════════
 ║  OWNER : SATRIA
 ╠═════════════
-║◄]·♦·Menu For Public·♦·[►
+║◄]♦Menu For Public♦[►
 ║╔════════════
 ║╠[•]Help
 ║╠[•]Key
@@ -113,7 +113,7 @@ Keyowner ="""
 ╠═════════════
 ║   Owner : SATRIA  
 ╠═════════════
-║   ◄]·♦·Menu For Admin·♦·[►
+║◄]♦Menu For Admin♦[►
 ║╔════════════
 ║╠[•]Kick ...
 ║╠[•]Invite (by mid)
@@ -140,6 +140,8 @@ Keyowner ="""
 ║╠[•]Status (cek status room)
 ║╠[•]Cctv
 ║╠[•]Intip
+║╠[•] Sider on / off
+║╠[•] Tag, Dor, tagall, tag
 ║╠[•]Toong
 ║╠[•]Nk
 ║╠[•]Tajong
@@ -172,7 +174,7 @@ Setgroup ="""
 ╠═════════════
 ║ OWNER : SATRIA 
 ╠═════════════
-║◄]·♦·Menu For Admin·♦·[►
+║◄]♦Menu For Admin♦[►
 ║╔════════════
 ║╠[•]Cancel
 ║╠[•]Buka qr/Open qr
@@ -287,9 +289,9 @@ autoleaveroom = []
 targets = []
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid]
 induk=[mid]
-Creator=["u7fd29ae17122147632fc57cde32ed310","ue5e379b849b315332b0861332c5808e6"]
-admin=["u7fd29ae17122147632fc57cde32ed310","ue5e379b849b315332b0861332c5808e6",mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,Smid1] #Krisna,kris,
-owner=["u7fd29ae17122147632fc57cde32ed310","ue5e379b849b315332b0861332c5808e6"]
+Creator=["u1608ae21e5de2547b5fa8707b21ca220","u622a5e6c9bcec78d243e10e604a32dbd"]
+admin=["u1608ae21e5de2547b5fa8707b21ca220","u622a5e6c9bcec78d243e10e604a32dbd","uf78f7b0be06ce35922a542518bf89f6f","u253f38db954e020c62135c3403fa93f4","ub77942765509307a9e7c7841ec722382"]
+owner=["u1608ae21e5de2547b5fa8707b21ca220","u622a5e6c9bcec78d243e10e604a32dbd"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -336,6 +338,8 @@ Idline:  http://line.me/ti/p/up3NLjmK17""",
     "pnharfbot":{},
     "pname":{},
     "pro_name":{},
+    "Sider":{},
+    "Tag":True,
     "atjointicket":True
     }
 
@@ -345,6 +349,16 @@ wait2 = {
     'setTime':{},
     'ROM':{}
     }
+    
+settings = {
+    "simiSimi":{}
+    }
+    
+cctv = {
+    "cyduk":{},
+    "point":{},
+    "sidermem":{}
+}    
 
 mimic = {
     "copy":False,
@@ -368,7 +382,14 @@ res = {
 
 setTime = {}
 setTime = wait2['setTime']
+mulai = time.time() 
 
+def waktu(secs):
+    mins, secs = divmod(secs,60)
+    hours, mins = divmod(mins,60)
+    day, hours = divmod(hours,24)
+    return '\n🇲🇨%02d hari🇲??\n🇲🇨%02d jam🇲🇨\n🇲🇨%02d menit🇲🇨\n🇲🇨%02d detik🇲🇨' % (day, hours, mins, secs) 
+    
 contact = cl.getProfile()
 backup = cl.getProfile()
 profile = cl.getProfile()
@@ -1813,6 +1834,42 @@ def bot(op):
                   G.preventJoinByTicket = True
                   random.choice(KAC).updateGroup(G)
                   wait["blacklist"][op.param2] = True
+#----------------------------------------------------------------------------
+
+
+            if wait["alwaysRead"] == True:
+                if msg.toType == 0:
+                    cl.sendChatChecked(msg.from_,msg.id)
+                else:
+                    cl.sendChatChecked(msg.to,msg.id)
+                    
+             
+        if op.type == 55:
+                try:
+                    if cctv['cyduk'][op.param1]==True:
+                        if op.param1 in cctv['point']:
+                            Name = cl.getContact(op.param2).displayName
+                            if Name in cctv['sidermem'][op.param1]:
+                                pass
+                            else:
+                                cctv['sidermem'][op.param1] += "\n• " + Name
+                                if " " in Name:
+                                    nick = Name.split(' ')
+                                    if len(nick) == 2:
+                                        cl.sendText(op.param1, "🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n""Haii " + "👉"+"@ " + nick[0] + " 👈" + "\nNgintip Aja Niih. . .\nChat Kek Idiih (-__-)   ")
+                                    else:
+                                        cl.sendText(op.param1,"🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n""Haii " + "👉 "+"@ " + nick[1] + " 👈" + "\nBetah Banget Jadi Penonton. . .\nChat Napa (-__-)   ")
+                                else:
+                                    cl.sendText(op.param1,"🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n""Haii " + "👉 "+"@ " + Name + " 👈" + "\nNgapain Kak Ngintip Aja???\nSini Gabung Chat...   ")
+                        else:
+                            pass
+                    else:
+                        pass
+                except:
+                    pass
+
+        else:
+            pass                   
 #--------------------------------
         if op.type == 22:
             if wait["leaveRoom"] == True:
@@ -3444,7 +3501,7 @@ def bot(op):
                         cl.sendText(msg.to,"done")
                     else:
                         cl.sendText(msg.to,"è¦�äº†å…³æ–­ã€‚")
-            elif msg.text in ["Status","status"]:
+            elif msg.text in ["Status","Set"]:
               if msg.from_ in admin:
                 md = "⭐Status Proteksi⭐\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\nHANYA UNTUK ADMIN\n*============*\n"
                 if wait["Protectgr"] == True: md+="[•]Protect QR [On]\n"
@@ -3472,8 +3529,7 @@ def bot(op):
                 if wait["Protectcancel"] == True: md+="[•]Protect Cancel [On]\n"
                 else: md+="[•]Protect Cancel [Off]\n"
                 if wait["protectionOn"] == True: md+="[•]Protection : hight\n"+ datetime.today().strftime('%H:%M:%S')
-                else:md+="[•]Protection : low\n"+ datetime.today().strftime('%H:%M:%S')
-                "\n*============*\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n*============*"
+                else:md+="[•]Protection : low\n*============*\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\n*============*\n"+ datetime.today().strftime('%H:%M:%S')
                 cl.sendText(msg.to,md)
             elif "Time" in msg.text:
               if msg.from_ in admin:
@@ -4556,7 +4612,7 @@ def bot(op):
                   cl.updateGroup(G)
                   Ticket = cl.reissueGroupTicket(msg.to)
                   
-            elif msg.text in ["BotTrix4 Join"]:
+            elif msg.text in ["BotTrox4 Join"]:
               if msg.from_ in admin:
                   X = cl.getGroup(msg.to)
                   X.preventJoinByTicket = False
@@ -4803,7 +4859,7 @@ def bot(op):
                  if jml > 500:
                     cl.sendText(msg.to,'Member melebihi batas.')
                  cnt = Message()
-                 cnt.text = "Done : " + str(jml) +  " Members\n\nCrot... crot... aww.. Muncrat...!!!"
+                 cnt.text = "Done : " + str(jml) +  " Members\n!!!"
                  cnt.to = msg.to
                  cl.sendMessage(cnt)                  
     #-------------Fungsi Tag All Finish---------------#
@@ -5425,6 +5481,160 @@ def bot(op):
             elif msg.text in ["Wc","wc","kam"]:
                 ki.sendText(msg.to,"Selamat datang di Group Kami")
                 kk.sendText(msg.to,"Jangan nakal ok!")
+            elif msg.text in ["Op katakan hi"]:
+                ki.sendText(msg.to,"Hi BotTrox 􀜁􀅔Har Har􏿿")
+                kk.sendText(msg.to,"Hi BotTrox 􀜁􀅔Har Har􏿿")
+                kc.sendText(msg.to,"Hi BotTrox 􀜁􀅔Har Har􏿿")
+
+#-----------------------------------------------
+            elif msg.text in ["Rhara vekok"]:
+                ki.sendText(msg.to,"Rhara Vekok 􀜁􀅔Har Har􏿿")
+                kk.sendText(msg.to,"Rhara Vekok 􀜁􀅔Har Har􏿿")
+                kc.sendText(msg.to,"Rhara Vekok 􀜁􀅔Har Har􏿿")
+            elif msg.text in ["Satria Vekok"]:
+                ki.sendText(msg.to,"Satria Vekok 􀜁􀅔Har Har􏿿")
+                kk.sendText(msg.to,"Satria Vekok 􀜁􀅔Har Har􏿿")
+                kc.sendText(msg.to,"Satria Vekok 􀜁􀅔Har Har􏿿")
+            elif msg.text in ["Bobo ah","Bobo dulu ah"]:
+                ki.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
+                kk.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
+                kc.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
+            elif msg.text in ["Bot Vekok"]:
+                ki.sendText(msg.to,"Kamu Yang Vekok 􀜁􀅔Har Har􏿿")
+                kk.sendText(msg.to,"Kamu Yang Vekok 􀜁􀅔Har Har􏿿")
+                kc.sendText(msg.to,"Kamu Yang Vekok 􀜁􀅔Har Har􏿿")
+            elif msg.text in ["Owner"]:
+            	msg.contentType = 13
+                kk.sendText(msg.to,"OWNER \n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨")
+                msg.contentMetadata = {'mid': 'u1608ae21e5de2547b5fa8707b21ca220'}
+                ki.sendMessage(msg)
+                msg.contentMetadata = {'mid': 'u622a5e6c9bcec78d243e10e604a32dbd'}
+                kk.sendMessage(msg)
+                kk.sendText(msg.to,"Itu Para Owner Kami Yang vekok 😂😂")
+            elif msg.text.lower() in ["hay"]:
+                    beb = "Hi Sayang 😘 " +cl.getContact(msg.from_).displayName + " 􀸂􀆇starry heart􏿿"
+                    cl.sendText(msg.to,beb)
+            elif msg.text in [".welcome"]:
+              if msg.from_ in admin:
+                ki.sendText(msg.to,"Selamat datang di Group Kami")
+                kk.sendText(msg.to,"Jangan nakal ok!")
+   #--------------------------------
+            elif msg.text.lower() == 'runtime':
+              if msg.from_ in admin:
+                cl.sendText(msg.to,"「Please wait..」\nType  :Loading...\nStatus : Loading...")
+                eltime = time.time() - mulai
+                van = "Type : Bot Sedang Berjalan \nStatus : Aktif \n⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ sudah berjalan selama " + waktu(eltime)
+                cl.sendText(msg.to,van)   
+  #----------------------------------
+            elif "Waktu" in msg.text:
+              if msg.from_ in admin:
+	    	       wait2['setTime'][msg.to] = datetime.today().strftime('TANGGAL : %Y-%m-%d \nHARI : %A \nJAM : %H:%M:%S')
+	               cl.sendText(msg.to, "         Waktu/Tanggal\n\n" + (wait2['setTime'][msg.to]))
+	               cl.sendText(msg.to, "Maafin Satria Jika salah Ya kak\n(｀・ω・´)\n \n"  +  datetime.now().strftime('%H:%M:%S'))
+	
+            elif msg.text in ["Friendlist"]:
+              if msg.from_ in admin:
+                contactlist = cl.getAllContactIds()
+                kontak = cl.getContacts(contactlist)
+                num=1
+                msgs="══════List Friend═══════"
+                for ids in kontak:
+                    msgs+="\n[%i] %s" % (num, ids.displayName)
+                    num=(num+1)
+                msgs+="\n══════List Friend═══════\n\nTotal Friend : %i" % len(kontak)
+                cl.sendText(msg.to, msgs)
+
+            elif msg.text in ["Memlist"]:
+              if msg.from_ in admin:   
+                kontak = cl.getGroup(msg.to)
+                group = kontak.members
+                num=1
+                msgs="══════List Member═�����═════-"
+                for ids in group:
+                    msgs+="\n[%i] %s" % (num, ids.displayName)
+                    num=(num+1)
+                msgs+="\n══════List Member═══════\n\nTotal Members : %i" % len(group)
+                cl.sendText(msg.to, msgs)
+#-------------------------------------------------
+            elif "Sider on" in msg.text:
+	      if msg.from_ in admin:
+                try:
+                    del cctv['point'][msg.to]
+                    del cctv['sidermem'][msg.to]
+                    del cctv['cyduk'][msg.to]
+                except:
+                    pass
+                cctv['point'][msg.to] = msg.id
+                cctv['sidermem'][msg.to] = ""
+                cctv['cyduk'][msg.to]=True
+                wait["Sider"] = True
+                cl.sendText(msg.to,"🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\nSet reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+                
+            elif "Sider off" in msg.text:
+	      if msg.from_ in admin:
+                if msg.to in cctv['point']:
+                    cctv['cyduk'][msg.to]=False
+                    wait["Sider"] = False
+                    cl.sendText(msg.to, "🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\nDelete reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+                else:
+                    cl.sendText(msg.to, "🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨\nDelete reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+
+            elif "sider" == msg.text.lower():
+                    if msg.to in wait2['readPoint']:
+                        if wait2["ROM"][msg.to].items() == []:
+                             cl.sendText(msg.to, "Sider:\nNone")
+                        else:
+                            chiya = []
+                            for rom in wait2["ROM"][msg.to].items():
+                                chiya.append(rom[1])
+                               
+                            cmem = cl.getContacts(chiya)
+                            zx = ""
+                            zxc = ""
+                            zx2 = []
+                            xpesan = 'Lurkers:\n'
+                        for x in range(len(cmem)):
+                                xname = str(cmem[x].displayName)
+                                pesan = ''
+                                pesan2 = pesan+"@a\n"
+                                xlen = str(len(zxc)+len(xpesan))
+                                xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
+                                zx = {'S':xlen, 'E':xlen2, 'M':cmem[x].mid}
+                                zx2.append(zx)
+                                zxc += pesan2
+                                msg.contentType = 0
+           
+                        print zxc
+                        msg.text = xpesan+ zxc + "\nLurking time: %s\nCurrent time: %s"%(wait2['setTime'][msg.to],datetime.now().strftime('%H:%M:%S'))
+                        lol ={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}
+                        print lol
+                        msg.contentMetadata = lol
+                        try:
+                          cl.sendMessage(msg)
+                        except Exception as error:
+                              print error
+                        pass
+               
+           
+                    else:
+                        cl.sendText(msg.to, "Lurking has not been set.")
+                        
+            elif msg.text.lower() == 'time':
+              if msg.from_ in admin:
+                timeNow = datetime.now()
+                timeHours = datetime.strftime(timeNow,"(%H:%M)")
+                day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
+                hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
+                bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                inihari = datetime.today()
+                hr = inihari.strftime('%A')
+                bln = inihari.strftime('%m')
+                for i in range(len(day)):
+                    if hr == day[i]: hasil = hari[i]
+                for k in range(0, len(bulan)):
+                    if bln == str(k): bulan = blan[k-1]
+                rst = hasil + ", " + inihari.strftime('%d') + " - " + bln + " - " + inihari.strftime('%Y') + "\nJam : [ " + inihari.strftime('%H:%M:%S') + " ]"
+                cl.sendText(msg.to, rst)
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
                 ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
@@ -5842,7 +6052,7 @@ def bot(op):
             elif msg.text in ["Creator"]:
               msg.contentType = 13
               msg.contentMetadata = {'mid': 'u1608ae21e5de2547b5fa8707b21ca220'}
-              cl.sendText(msg.to,"=============")
+              cl.sendText(msg.to,"CREATOR\n🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨")
               cl.sendMessage(msg)
               cl.sendText(msg.to,"=============")
               cl.sendText(msg.to,"Itu Creator Kami Yang Manis Kalem 😜")  
@@ -6120,7 +6330,7 @@ def autolike():
       if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
         try:
           cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1001)
-          cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrtox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+          cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
           ki.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1001)
           ki.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Aku Juga Ikutin Boss Aku Like Status Kamu Ka\n\n Like Back yah Ka 😊")
           kk.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1001)
@@ -6135,7 +6345,7 @@ def autolike():
           k2.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Aku Juga Ikutin Boss Aku Like Status Kamu Ka\n\n Like Back yah Ka 😊")
           k3.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1001)
           k3.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"Aku Juga Ikutin Boss Aku Like Status Kamu Ka\n\n Like Back yah Ka 😊")
-          cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+          cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
           print "Like"
         except:
           pass
@@ -6162,14 +6372,14 @@ def likePost():
                     k3.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
                     k4.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
                     k5.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
-                    cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
-                    ki.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
-                    kk.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
-                    kc.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
-                    ks.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
-                    k1.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
-                    k2.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
-                    k3.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ BotTrox Bot✰😊\n\n☆º°˚˚☆ BOTTROX ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    ki.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    kk.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    kc.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    ks.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    k1.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    k2.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
+                    k3.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉ąµţ๏ℓɨЌ€ By✰ 🇲🇨⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱🇲🇨✰😊\n\n☆º°˚˚☆ ⊰์◉⊱B❂TT❂X B❂T⊰์◉⊱ ✰°˚˚☆（＾ω＾）\nąµţ๏ℓɨЌ€ by SATRIA⭐👈 »»» http://line.me/ti/p/up3NLjmK17 «««")
                     print "Like"
                 except:
                     pass
